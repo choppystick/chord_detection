@@ -36,6 +36,7 @@ def analyze_wav(file_path):
     plt.colorbar(label='Magnitude')
 
     plt.tight_layout()
+    plt.savefig("visualizations/chromagram.png")
     plt.show()
 
 
@@ -135,9 +136,9 @@ def add_audio_to_video(video_path, audio_path, output_path):
     video.write_videofile(output_path, codec='libx264', audio_codec='aac')
 
 
-file_path = "sample2.wav"
-video_output = 'stft_animation.mp4'
-final_output = 'stft_animation_with_audio.mp4'
+file_path = "samples/sample2.wav"
+video_output = 'output/stft_animation.mp4'
+final_output = 'output/stft_animation_with_audio.mp4'
 
 analyze_wav(file_path)
 create_stft_animation(file_path, video_output, max_freq=5000)
